@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>69 Humps per Minute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Podkova:wght@400..800&display=swap" rel="stylesheet">
+    <style>
+    body {
+      width: 100%;
+      height: 100%;
+      padding: 0px;
+      margin: 0px;
+      background-color: #602024;
+    }
+
+    #inner {
+      background-color: #b8a8b0;
+      box-shadow: #400 4px 8px 4px 12px;
+      height: 100%;
+      width: 80%;
+      left: 50%;
+      margin: 0px auto;
+      box-sizing: padding-box;
+    }
+    
+    #inner > * {
+      left: 50%;
+      margin: 5px auto;
+      padding: 15px;
+      display: table;
+    }
+    
+    * {
+      color: #202038;
+      font: 1.1em "Podkova", sans-serif;
+      padding: 5px;
+      box-sizing: border-box;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 400%;
+      text-decoration: underline;
+      font-weight: 1200;
+    }
+
+    b {
+      color: #403;
+      font-size: 110%;
+      font-weight: 150%;
+    }
+
+    s {
+      opacity: 40%;
+      font-size: 95%;
+    }
+
+    #dot {
+      font: 1500% bold Arial;
+      transition: color 150ms, text-shadow 900ms, opacity 500ms;
+      color: #545050;
+      opacity: 90%;
+      text-shadow: -2px 3px 5px #322;
+    }
+
+    #dot.throb {
+      transition: color 2ms, text-shadow 10ms, opacity 10ms;
+      color: #F81270;
+      opacity: 100%;
+      text-shadow: -3px 3px 20px #99085A;
+    }
+
+    #footer {
+      opacity: 50%;
+      bottom: 5%;
+      font-size: 70%;
+    }
+
+    #footer, #footer * {
+      
+    }
+
+    #footer * {
+      font-size: 100%;
+    }
+    </style>
+  </head>
+  <body>
+  <div id="inner">
+    <h1>Sync it up~</h1>
+
+    <p>This dot is <s>throbbing</s> pulsating at <b>69 beats per minute</b>.</p>
+
+    <span id="dot">.</span>
+
+    <div id="footer">
+      &copy;2024 <a href="wallabra.github.io">Gustavo Ramos Rehermann</a> @ <a href="mailto:rehermnan6046@gmail.com">rehermann6046@gmail.com</a>.
+    </div>
+  </div>
+  
+  <script>
+    var dot = document.getElementById('dot');
+    setInterval(function() {
+      console.log("- throb")
+      // throb
+      dot.className += " throb";
+      
+      // unthrob
+      setTimeout(function() {
+        dot.className = dot.className.replace(" throb", "");
+      }, 50);
+    }, 60000 / 69);
+  </script>
+  </body>
+</html>
